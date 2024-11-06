@@ -12,7 +12,7 @@ class AccessDeviceRequestConverter : RequestConverterFunction {
         request: AggregatedHttpRequest,
         expectedResultType: Class<*>,
         expectedParameterizedResultType: ParameterizedType?,
-    ): Any? {
+    ): Any {
         val ip = ctx.remoteAddress().address.hostAddress
         val userAgent = request.headers().get("User-Agent") ?: "Unknown"
 

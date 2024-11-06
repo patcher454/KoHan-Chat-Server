@@ -9,7 +9,7 @@ dependencies {
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "com.kohan.websocket.MessageWebSocketKt"
+        attributes["Main-Class"] = "com.kohan.message.router.MessageRouterKt"
     }
     from(sourceSets.main.get().output)
 

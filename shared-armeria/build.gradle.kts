@@ -17,9 +17,9 @@ dependencies {
     api(libs.armeria.kotlin)
     api(libs.armeria.grpc)
     api(libs.armeria.grpc.kotlin)
-    api(libs.armeria.kafka)
+    api(libs.kafka.clients)
 
-    implementation(project(":proto"))
+    api(project(":proto"))
 
     runtimeOnly(libs.slf4j.simple)
 }

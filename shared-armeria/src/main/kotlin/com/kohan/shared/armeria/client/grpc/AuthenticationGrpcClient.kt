@@ -6,11 +6,12 @@ import com.linecorp.armeria.client.grpc.GrpcClients
 import io.github.cdimascio.dotenv.dotenv
 
 object AuthenticationGrpcClient {
+    val host = dotenv()["AUTHENTICATION_HOST"]
     val port = dotenv()["AUTHENTICATION_PORT"]
 
     private val client =
         GrpcClients.newClient(
-            "gproto+http://localhost:$port/grpc/v1/",
+            "gproto+http://$host:$port/grpc/v1/",
             AuthenticationServiceGrpcKt.AuthenticationServiceCoroutineStub::class.java,
         )
 

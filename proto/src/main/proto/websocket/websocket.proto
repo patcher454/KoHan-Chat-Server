@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.kohan.proto.websocket.v1;
+
+import "google/protobuf/empty.proto";
+message sendRequest{
+  repeated receiver receiver = 1;
+  string message = 2;
+}
+
+message receiver{
+  string userId = 1;
+  string deviceToken = 2;
+}
+
+
+service WebSocketService {
+  rpc sendMessage(sendRequest) returns (google.protobuf.Empty) {}
+}
+
+
